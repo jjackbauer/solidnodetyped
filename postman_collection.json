@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "0f37bfaf-91c5-4d83-835b-caa510ae1e1a",
+		"name": "solidnodetyped",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ricardo\",\r\n    \"email\": \"assasa@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:909/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "909",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:909/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "909",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

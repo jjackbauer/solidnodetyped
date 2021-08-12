@@ -5,4 +5,6 @@
     $ cd solidnodetyped
     $ yarn install
     $ yarn start
-    
+### testing:
+    - import postman collection
+    - use as you wish 
