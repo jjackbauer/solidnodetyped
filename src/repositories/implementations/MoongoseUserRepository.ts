@@ -2,6 +2,7 @@ import {Schema, model, Document} from "mongoose"
 import { User } from "../../entities/User"
 import { IUserRepository } from "../IUserRepository"
 import mongoose from "mongoose"
+import { IlistUsersDTO } from "../../useCases/listUsers/listUsersDTO"
 
 export interface IUserSchema extends Document
 {
@@ -34,6 +35,26 @@ export class MongooseUserRepository implements IUserRepository
             useNewUrlParser: true,
             useUnifiedTopology: true
         })
+    }
+    async getAllUsers(): Promise<IlistUsersDTO[]>
+    {
+        const users = await Model.find();
+        
+        console.log(users)
+        
+        var usersDTO: IlistUsersDTO[] = []
+
+        for (var user of users)        
+            usersDTO.push({
+                name: user.name,
+                email: user.email,
+                id: user._id
+            });
+
+        console.log(usersDTO);
+
+        return usersDTO;
+        
     }
     async findByEmail(email: string): Promise<User> 
     {
